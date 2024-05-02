@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang=en>
+
+<head>
+    <title>{% block TITLE %}{% endblock %} - To-Do App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> <!-- Our app shall be styled uniformly across all views. Therefore, it makes sense to 
+    centralize all CSS code into a single file and to refer to it within the 📄base.html template: -->
+</head>
+
+<body>
+<nav>
+    <h1>To-Do App</h1>
+    <a href="{{ url_for('lists') }}">Lists</a>
+</nav>
+<section class="content">
+    <header>{% block HEADER %}{% endblock %}</header>
+    {% block CONTENT %}{% endblock %}
+</section>
+</body>
+
+</html>
